@@ -6,6 +6,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                slackSend (color: '#FF0000', message: 'Iniciando compilacion')
             }
         }
         stage('Test') {
@@ -14,7 +15,7 @@ pipeline {
             }
         }
         stage('Deploy') {
-            steps {
+            steps{
                 echo 'Deploying....'
             }
         }
